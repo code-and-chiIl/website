@@ -17,6 +17,5 @@ jobs:
             - name: move json files to _post directory 
               run: | 
                 mv data/tldr/*.md _posts/
-                mv data/tldr/*.md _posts/
 
 
