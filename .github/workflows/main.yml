@@ -15,6 +15,7 @@ jobs:
         uses: actions/checkout@v4
       - name: move md files to _post directory 
         run: | 
+          ls data/tldr 
           mv data/tldr/*.md _posts/
 
 
