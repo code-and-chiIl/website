@@ -16,6 +16,6 @@ jobs:
       - name: move md files to _post directory 
         run: | 
           ls data/tldr/*.md 
-          mv data/tldr/*.md _posts/
+          mv data/tldr/* _posts
 
 
