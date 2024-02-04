@@ -15,7 +15,6 @@ jobs:
         uses: actions/checkout@v4
       - name: move md files to _post directory
         run: | 
-          ls data/tldr/*.md 
           mv data/tldr/* _posts
       - name: auto commit
         uses: stefanzweifel/git-auto-commit-action@v5
