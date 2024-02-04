@@ -3,7 +3,7 @@ name: upload post
 on:
   push:
     branches:
-      - 'main'
+      - 'gh-pages'
     # paths: 
     #   - 'data/tldr/*.md'
 
