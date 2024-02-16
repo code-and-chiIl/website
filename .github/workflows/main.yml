@@ -16,5 +16,6 @@ jobs:
       - name: move md files to _post directory
         run: | 
           mv data/*.md _posts
+          rm *.jsonl
       - name: auto commit
         uses: stefanzweifel/git-auto-commit-action@v5
