@@ -13,9 +13,18 @@ jobs:
     steps: 
       - name: Check out the repository to the runner # 이게 있어야 actions가 repo의 정보를 사용가능! 
         uses: actions/checkout@v4
+
+      - name: check for md files 
+        id: file_status
+        uses: andstor/file-existence-action@v1
+        with:
+          files: "data/*.md" 
+
       - name: move md files to _post directory
+        if: steps.file_status.outputs.files_exists == 'true'
         run: | 
           mv data/*.md _posts
           rm data/*.jsonl
+          
       - name: auto commit
         uses: stefanzweifel/git-auto-commit-action@v5
