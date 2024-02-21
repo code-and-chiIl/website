@@ -20,11 +20,16 @@ jobs:
         with:
           files: "data/*.md" 
 
+      - name: test
+        if: steps.file_status.outputs.files_exists == 'false'
+        run: echo "HEY!"
+
       - name: move md files to _post directory
         if: steps.file_status.outputs.files_exists == 'true'
         run: | 
           mv data/*.md _posts
           rm data/*.jsonl
-          
+
       - name: auto commit
+        if: steps.file_status.outputs.files_exists == 'true'
         uses: stefanzweifel/git-auto-commit-action@v5
